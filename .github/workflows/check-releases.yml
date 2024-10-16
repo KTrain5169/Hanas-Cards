@@ -11,6 +11,8 @@ jobs:
         steps:
           - name: Checkout repo
             uses: actions/checkout@v4
+            with:
+              ref: "main"
           
           - name: Run script
             run: |
@@ -18,3 +20,10 @@ jobs:
               .\.github\script.ps1
             env:
               discordWebhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+            
+          - name: Commit & push changes
+            run: |
+              git config user.name GitHub Actions
+              git config user.email actions@github.com
+              git commit .github\version_id.txt -m "Update latest Version ID"
+              git push

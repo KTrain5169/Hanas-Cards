@@ -13,16 +13,15 @@ $responseRaw = Invoke-WebRequest -Uri $apiUrl -Method Get -Headers $headers -Use
 
 
 # Extract the first instance of "version_id" using a regular expression
-if ($responseRaw -match '"project_id"\s*:\s*"([^"]+)"') {
+if ($responseRaw -match '"id"\s*:\s*"([^"]+)"') {
     $version_id = $matches[1].Trim()
 } else {
-    Write-Output "No version_id found in response."
+    Write-Output "No id found in response."
     exit
 }
 
 # Parse the first "url" under "files" after parsing JSON
 $response = $responseRaw | ConvertFrom-Json
-$url = $response.files[0].url
 
 # Check if the version ID has changed
 if (Test-Path $versionFilePath) {
@@ -36,9 +35,11 @@ if ($version_id -ne $previous_version_id) {
     # Update the version ID file
     Set-Content -Path $versionFilePath -Value $version_id
 
+    $url = "https://modrinth.com/mod/hanas-cards/version/$version_id"
+
     # Construct the Discord message payload
     $payload = @{
-        content = "New Version Detected!`nURL: $url`nVersion ID: $version_id"
+        content = "A new version has released!`n[Download it here!]($url)"
     } | ConvertTo-Json
 
     # Send the payload to the Discord webhook
