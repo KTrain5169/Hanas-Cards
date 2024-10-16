@@ -1,0 +1,20 @@
+name: Check release
+
+on:
+    schedule:
+        - cron: "*/5 * * * *"
+
+jobs:
+    check-release:
+        name: Check Modrinth API and post to Discord
+        runs-on: windows-latest
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v4
+          
+          - name: Run script
+            run: |
+              cd ${{ github.workspace }}
+              .\.github\script.ps1
+            env:
+              discordWebhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
