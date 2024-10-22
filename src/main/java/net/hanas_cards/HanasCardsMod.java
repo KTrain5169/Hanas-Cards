@@ -2,6 +2,7 @@ package net.hanas_cards;
 
 import net.fabricmc.api.ModInitializer;
 import net.hanas_cards.component.ModDataComponentTypes;
+import net.hanas_cards.config.ModConfigs;
 import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.item.CardModItemGroups;
 import net.hanas_cards.item.CardModPacks;
@@ -15,6 +16,17 @@ public class HanasCardsMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        LOGGER.info("Initializing Hanas Cards Mod...");
+
+        // Register and load the configs
+        ModConfigs.registerConfigs();
+
+        // Reload the config
+        if (ModConfigs.CONFIG.reload()) {
+            LOGGER.info("Configuration reloaded successfully.");
+        } else {
+            LOGGER.error("Failed to reload configuration on startup.");
+        }
 
         CardModItemGroups.registerCardModItemGroups();
 
@@ -26,7 +38,6 @@ public class HanasCardsMod implements ModInitializer {
         CardModItems.registerShulkerCards();
 
         LootTableModifier.registerLootTableEvents();
-
         ModDataComponentTypes.registerDataComponentTypes();
     }
 }

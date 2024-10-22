@@ -45,6 +45,7 @@ public class CardModTags {
         public static final TagKey<Item> UNCOMMON_CARDS = createTag("uncommon_cards");
         public static final TagKey<Item> RARE_CARDS = createTag("rare_cards");
         public static final TagKey<Item> EPIC_CARDS = createTag("epic_cards");
+        public static final TagKey<Item> GLITCHED_CARDS = createTag("glitched_cards");
         public static final TagKey<Item> MYTHIC_CARDS = createTag("mythic_cards");
         public static final TagKey<Item> LEGENDARY = createTag("legendary_cards");
 
@@ -68,7 +69,7 @@ public class CardModTags {
 
         // Expansions
         public static final TagKey<Item> SERIES_ONE_EXPANSION_ONE_CARDS = createTag("series_one_expansion_one_cards");
-
+        public static final TagKey<Item> SERIES_ONE_EXPANSION_TWO_CARDS = createTag("series_one_expansion_two_cards");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(HanasCardsMod.MOD_ID, name));

@@ -2,6 +2,7 @@ package net.hanas_cards.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hanas_cards.HanasCardsMod;
+import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public class CardModItemGroups {
     public static final ItemGroup HANAS_CARDS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HanasCardsMod.MOD_ID, "cards"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.cards"))
-            .icon(() -> new ItemStack(CardModItems.LUCY_AXOLOTL_CARD)).entries((displayContext, entries) -> {
+            .icon(() -> new ItemStack(LUCY_AXOLOTL_CARD)).entries((displayContext, entries) -> {
                         entries.add(CardModPacks.OVERWORLD_MOB_CARD_PACK);
                         entries.add(CardModPacks.NETHER_MOB_CARD_PACK);
                         entries.add(CardModPacks.END_MOB_CARD_PACK);
@@ -25,118 +26,139 @@ public class CardModItemGroups {
 
                         entries.add(CardModPacks.SERIES_ONE_CARD_PACK);
                         entries.add(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK);
+                        entries.add(CardModPacks.SERIES_ONE_EXPANSION_TWO_CARD_PACK);
 
-                        entries.add(CardModItems.ALLAY_CARD);
+                        //entries.add(FLINT_SOURCE_CARD);
+                        //entries.add(STONE_SOURCE_CARD);
+                        //entries.add(IRON_SOURCE_CARD);
+                        //entries.add(EMERALD_SOURCE_CARD);
+                        //entries.add(NETHERRACK_SOURCE_CARD);
+                        //entries.add(ENDSTONE_SOURCE_CARD);
 
-                        entries.add(CardModItems.ARMADILLO_CARD);
+                        entries.add(ALLAY_CARD);
+                        entries.add(BURNING_ALLAY_CARD);
 
-                        entries.add(CardModItems.LUCY_AXOLOTL_CARD);
-                        entries.add(CardModItems.WILD_AXOLOTL_CARD);
-                        entries.add(CardModItems.GOLD_AXOLOTL_CARD);
-                        entries.add(CardModItems.CYAN_AXOLOTL_CARD);
-                        entries.add(CardModItems.BLUE_AXOLOTL_CARD);
-                        entries.add(CardModItems.GREEN_AXOLOTL_CARD);
-                        entries.add(CardModItems.MELONOID_AXOLOTL_CARD);
+                        entries.add(ARMADILLO_CARD);
 
-                        entries.add(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD);
-                        entries.add(CardModItems.CACTUS_AXOLOTL_CARD);
-                        entries.add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD);
-                        entries.add(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD);
+                        entries.add(LUCY_AXOLOTL_CARD);
+                        entries.add(WILD_AXOLOTL_CARD);
+                        entries.add(GOLD_AXOLOTL_CARD);
+                        entries.add(CYAN_AXOLOTL_CARD);
+                        entries.add(BLUE_AXOLOTL_CARD);
+                        entries.add(GREEN_AXOLOTL_CARD);
+                        entries.add(MELONOID_AXOLOTL_CARD);
+                        entries.add(BLACK_AND_RED_AXOLOTL_CARD);
 
-                        entries.add(CardModItems.SKELETON_AXOLOTL_CARD);
-                        entries.add(CardModItems.PUMPKIN_AXOLOTL_CARD);
+                        entries.add(SCREAMING_LUCY_AXOLOTL_CARD);
+                        entries.add(CACTUS_AXOLOTL_CARD);
+                        entries.add(TWO_TAILED_GLOWING_AXOLOTL_CARD);
+                        entries.add(ULTRA_VIOLET_AXOLOTL_CARD);
 
-                        entries.add(CardModItems.BAT_CARD);
+                        entries.add(SKELETON_AXOLOTL_CARD);
+                        entries.add(PUMPKIN_AXOLOTL_CARD);
 
-                        entries.add(CardModItems.ANGRY_BEE_CARD);
-                        entries.add(CardModItems.BEE_CARD);
-                        entries.add(CardModItems.ANGRY_POLLINATED_BEE_CARD);
-                        entries.add(CardModItems.POLLINATED_BEE_CARD);
-                        entries.add(CardModItems.GENTLE_BEE_CARD);
+                        entries.add(BAT_CARD);
 
-                        entries.add(CardModItems.CAMEL_CARD);
+                        entries.add(ANGRY_BEE_CARD);
+                        entries.add(BEE_CARD);
+                        entries.add(ANGRY_POLLINATED_BEE_CARD);
+                        entries.add(POLLINATED_BEE_CARD);
 
-                        entries.add(CardModItems.DOLPHIN_CARD);
+                        entries.add(GENTLE_BEE_CARD);
+                        entries.add(WALDO_BEE_CARD);
 
-                        entries.add(CardModItems.FOX_CARD);
-                        entries.add(CardModItems.SNOW_FOX_CARD);
+                        entries.add(CAMEL_CARD);
+                        entries.add(PIRATE_CAMEL_CARD);
 
-                        entries.add(CardModItems.TEMPERATE_FROG_CARD);
-                        entries.add(CardModItems.WARM_FROG_CARD);
-                        entries.add(CardModItems.COLD_FROG_CARD);
-                        entries.add(CardModItems.TADPOLE_CARD);
+                        entries.add(DOLPHIN_CARD);
 
-                        entries.add(CardModItems.FIREFLY_CARD);
+                        entries.add(FOX_CARD);
+                        entries.add(SNOW_FOX_CARD);
 
-                        entries.add(CardModItems.RED_PARROT_CARD);
-                        entries.add(CardModItems.BLUE_PARROT_CARD);
-                        entries.add(CardModItems.GREEN_PARROT_CARD);
-                        entries.add(CardModItems.CYAN_PARROT_CARD);
-                        entries.add(CardModItems.GRAY_PARROT_CARD);
+                        entries.add(TEMPERATE_FROG_CARD);
+                        entries.add(WARM_FROG_CARD);
+                        entries.add(COLD_FROG_CARD);
+                        entries.add(TADPOLE_CARD);
 
-                        entries.add(CardModItems.SQUID_CARD);
-                        entries.add(CardModItems.GLOW_SQUID_CARD);
+                        entries.add(CLOWN_TEMPERATE_FROG_CARD);
+                        entries.add(CLOWN_WARM_FROG_CARD);
+                        entries.add(CLOWN_COLD_FROG_CARD);
 
-                        entries.add(CardModItems.SNIFFER_CARD);
+                        entries.add(FIREFLY_CARD);
+
+                        entries.add(RED_PARROT_CARD);
+                        entries.add(BLUE_PARROT_CARD);
+                        entries.add(GREEN_PARROT_CARD);
+                        entries.add(CYAN_PARROT_CARD);
+                        entries.add(GRAY_PARROT_CARD);
+
+                        entries.add(COWBOY_RED_PARROT_CARD);
+
+                        entries.add(SQUID_CARD);
+                        entries.add(GLOW_SQUID_CARD);
+
+                        entries.add(SNIFFER_CARD);
 
                         // Rabbit
-                        entries.add(CardModItems.RABBIT_CARD);
-                        entries.add(CardModItems.ALBINO_RABBIT_CARD);
-                        entries.add(CardModItems.BLACK_AND_WHITE_RABBIT_CARD);
-                        entries.add(CardModItems.BLACK_RABBIT_CARD);
-                        entries.add(CardModItems.GOLD_RABBIT_CARD);
-                        entries.add(CardModItems.KILLER_RABBIT_CARD);
-                        entries.add(CardModItems.SALT_AND_PEPPER_RABBIT_CARD);
-                        entries.add(CardModItems.JUMBO_RABBIT_CARD);
+                        entries.add(RABBIT_CARD);
+                        entries.add(ALBINO_RABBIT_CARD);
+                        entries.add(BLACK_AND_WHITE_RABBIT_CARD);
+                        entries.add(BLACK_RABBIT_CARD);
+                        entries.add(GOLD_RABBIT_CARD);
+                        entries.add(KILLER_RABBIT_CARD);
+                        entries.add(SALT_AND_PEPPER_RABBIT_CARD);
+                        entries.add(JUMBO_RABBIT_CARD);
 
-                        entries.add(CardModItems.DIAMOND_RABBIT_CARD);
+                        entries.add(COPYWRITTEN_BLACK_RABBIT_CARD);
 
-                        entries.add(CardModItems.PEARLARIUM_RABBIT_CARD);
-                        entries.add(CardModItems.PETRAMIUNIUM_RABBIT_CARD);
-                        entries.add(CardModItems.IRON_RABBIT_CARD);
-                        entries.add(CardModItems.COPPER_RABBIT_CARD);
+                        entries.add(DIAMOND_RABBIT_CARD);
 
-                        entries.add(CardModItems.LAPIS_RABBIT_CARD);
-                        entries.add(CardModItems.QUARTZ_RABBIT_CARD);
+                        entries.add(PEARLARIUM_RABBIT_CARD);
+                        entries.add(PETRAMIUNIUM_RABBIT_CARD);
+                        entries.add(IRON_RABBIT_CARD);
+                        entries.add(COPPER_RABBIT_CARD);
+
+                        entries.add(LAPIS_RABBIT_CARD);
+                        entries.add(QUARTZ_RABBIT_CARD);
 
                         // Chicken
-                        entries.add(CardModItems.CHICKEN_CARD);
+                        entries.add(CHICKEN_CARD);
 
-                        entries.add(CardModItems.DIAMOND_CHICKEN_CARD);
-                        entries.add(CardModItems.PEARLARIUM_CHICKEN_CARD);
-                        entries.add(CardModItems.PETRAMIUNIUM_CHICKEN_CARD);
-                        entries.add(CardModItems.IRON_CHICKEN_CARD);
-                        entries.add(CardModItems.COPPER_CHICKEN_CARD);
+                        entries.add(DIAMOND_CHICKEN_CARD);
+                        entries.add(PEARLARIUM_CHICKEN_CARD);
+                        entries.add(PETRAMIUNIUM_CHICKEN_CARD);
+                        entries.add(IRON_CHICKEN_CARD);
+                        entries.add(COPPER_CHICKEN_CARD);
 
-                        entries.add(CardModItems.LAPIS_CHICKEN_CARD);
-                        entries.add(CardModItems.QUARTZ_CHICKEN_CARD);
+                        entries.add(LAPIS_CHICKEN_CARD);
+                        entries.add(QUARTZ_CHICKEN_CARD);
 
                         // Cow
-                        entries.add(CardModItems.COW_CARD);
-                        entries.add(CardModItems.MOOBLOOM_CARD);
-                        entries.add(CardModItems.RED_MOOSHROOM_CARD);
-                        entries.add(CardModItems.BROWN_MOOSHROOM_CARD);
-                        entries.add(CardModItems.WOOLY_COW_CARD);
+                        entries.add(COW_CARD);
+                        entries.add(MOOBLOOM_CARD);
+                        entries.add(RED_MOOSHROOM_CARD);
+                        entries.add(BROWN_MOOSHROOM_CARD);
+                        entries.add(WOOLY_COW_CARD);
 
-                        entries.add(CardModItems.PEARLARIUM_COW_CARD);
-                        entries.add(CardModItems.PETRAMIUNIUM_COW_CARD);
-                        entries.add(CardModItems.IRON_COW_CARD);
-                        entries.add(CardModItems.COPPER_COW_CARD);
+                        entries.add(PEARLARIUM_COW_CARD);
+                        entries.add(PETRAMIUNIUM_COW_CARD);
+                        entries.add(IRON_COW_CARD);
+                        entries.add(COPPER_COW_CARD);
 
-                        entries.add(CardModItems.LAPIS_COW_CARD);
-                        entries.add(CardModItems.QUARTZ_COW_CARD);
+                        entries.add(LAPIS_COW_CARD);
+                        entries.add(QUARTZ_COW_CARD);
 
                         // Donkey
-                        entries.add(CardModItems.DONKEY_CARD);
-                        entries.add(CardModItems.SADDLED_DONKEY_CARD);
+                        entries.add(DONKEY_CARD);
+                        entries.add(SADDLED_DONKEY_CARD);
 
                         // Horse
-                        entries.add(CardModItems.HORSE_CARD);
-                        entries.add(CardModItems.ARMORED_HORSE_CARD);
-                        entries.add(CardModItems.SKELETON_HORSE_CARD);
-                        entries.add(CardModItems.ZOMBIE_HORSE_CARD);
+                        entries.add(HORSE_CARD);
+                        entries.add(ARMORED_HORSE_CARD);
+                        entries.add(SKELETON_HORSE_CARD);
+                        entries.add(ZOMBIE_HORSE_CARD);
 
-                        entries.add(CardModItems.MULE_CARD);
+                        entries.add(MULE_CARD);
 
                         // Sheep
                         for (String color : sheep_colors) {
@@ -149,27 +171,27 @@ public class CardModItemGroups {
                                 System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
                             }
                         }
-                        entries.add(CardModItems.PEARLARIUM_SHEEP_CARD);
-                        entries.add(CardModItems.PETRAMIUNIUM_SHEEP_CARD);
-                        entries.add(CardModItems.IRON_SHEEP_CARD);
-                        entries.add(CardModItems.COPPER_SHEEP_CARD);
+                        entries.add(PEARLARIUM_SHEEP_CARD);
+                        entries.add(PETRAMIUNIUM_SHEEP_CARD);
+                        entries.add(IRON_SHEEP_CARD);
+                        entries.add(COPPER_SHEEP_CARD);
 
-                        entries.add(CardModItems.LAPIS_SHEEP_CARD);
-                        entries.add(CardModItems.QUARTZ_SHEEP_CARD);
+                        entries.add(LAPIS_SHEEP_CARD);
+                        entries.add(QUARTZ_SHEEP_CARD);
 
-                        entries.add(CardModItems.RAINBOW_SHEEP_CARD);
+                        entries.add(RAINBOW_SHEEP_CARD);
 
                         // Pig
-                        entries.add(CardModItems.PIG_CARD);
-                        entries.add(CardModItems.FLYING_PIG_CARD);
+                        entries.add(PIG_CARD);
+                        entries.add(FLYING_PIG_CARD);
 
-                        entries.add(CardModItems.PEARLARIUM_PIG_CARD);
-                        entries.add(CardModItems.PETRAMIUNIUM_PIG_CARD);
-                        entries.add(CardModItems.IRON_PIG_CARD);
-                        entries.add(CardModItems.COPPER_PIG_CARD);
+                        entries.add(PEARLARIUM_PIG_CARD);
+                        entries.add(PETRAMIUNIUM_PIG_CARD);
+                        entries.add(IRON_PIG_CARD);
+                        entries.add(COPPER_PIG_CARD);
 
-                        entries.add(CardModItems.LAPIS_PIG_CARD);
-                        entries.add(CardModItems.QUARTZ_PIG_CARD);
+                        entries.add(LAPIS_PIG_CARD);
+                        entries.add(QUARTZ_PIG_CARD);
 
                         for (String biome : villager_card_biomes) {
                             for (String profession : villager_card_professions) {
@@ -187,52 +209,55 @@ public class CardModItemGroups {
                             }
                         }
 
-                        entries.add(CardModItems.IRON_GOLEM_CARD);
-                        entries.add(CardModItems.SNOW_GOLEM_CARD);
-                        entries.add(CardModItems.SHEARED_SNOW_GOLEM_CARD);
+                        entries.add(SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD);
 
-                        entries.add(CardModItems.TURTLE_CARD);
+                        entries.add(IRON_GOLEM_CARD);
+                        entries.add(GOLDEN_GOLEM_CARD);
+                        entries.add(SNOW_GOLEM_CARD);
+                        entries.add(SHEARED_SNOW_GOLEM_CARD);
 
-                        entries.add(CardModItems.OCELOT_CARD);
-                        entries.add(CardModItems.BLACK_CAT_CARD);
-                        entries.add(CardModItems.BRITISH_SHORTHAIR_CAT_CARD);
-                        entries.add(CardModItems.CALICO_CAT_CARD);
-                        entries.add(CardModItems.JELLY_CAT_CARD);
-                        entries.add(CardModItems.PERSIAN_CAT_CARD);
-                        entries.add(CardModItems.RAGDOLL_CAT_CARD);
-                        entries.add(CardModItems.RED_CAT_CARD);
-                        entries.add(CardModItems.SIAMESE_CAT_CARD);
-                        entries.add(CardModItems.TABBY_CAT_CARD);
-                        entries.add(CardModItems.TUXEDO_CAT_CARD);
-                        entries.add(CardModItems.WHITE_CAT_CARD);
+                        entries.add(TURTLE_CARD);
 
-                        entries.add(CardModItems.WOLF_ASHEN_CARD);
-                        entries.add(CardModItems.WOLF_BLACK_CARD);
-                        entries.add(CardModItems.WOLF_CHESTNUT_CARD);
-                        entries.add(CardModItems.WOLF_PALE_CARD);
-                        entries.add(CardModItems.WOLF_RUSTY_CARD);
-                        entries.add(CardModItems.WOLF_SNOWY_CARD);
-                        entries.add(CardModItems.WOLF_SPOTTED_CARD);
-                        entries.add(CardModItems.WOLF_STRIPED_CARD);
-                        entries.add(CardModItems.WOLF_WOODS_CARD);
-                        entries.add(CardModItems.WOLF_ASHEN_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_BLACK_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_CHESTNUT_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_PALE_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_RUSTY_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_SNOWY_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_SPOTTED_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_STRIPED_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_WOODS_ANGRY_CARD);
-                        entries.add(CardModItems.WOLF_ASHEN_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_BLACK_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_CHESTNUT_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_PALE_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_RUSTY_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_SNOWY_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_SPOTTED_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_STRIPED_ARMOR_CARD);
-                        entries.add(CardModItems.WOLF_WOODS_ARMOR_CARD);
+                        entries.add(OCELOT_CARD);
+                        entries.add(BLACK_CAT_CARD);
+                        entries.add(BRITISH_SHORTHAIR_CAT_CARD);
+                        entries.add(CALICO_CAT_CARD);
+                        entries.add(JELLY_CAT_CARD);
+                        entries.add(PERSIAN_CAT_CARD);
+                        entries.add(RAGDOLL_CAT_CARD);
+                        entries.add(RED_CAT_CARD);
+                        entries.add(SIAMESE_CAT_CARD);
+                        entries.add(TABBY_CAT_CARD);
+                        entries.add(TUXEDO_CAT_CARD);
+                        entries.add(WHITE_CAT_CARD);
+
+                        entries.add(WOLF_ASHEN_CARD);
+                        entries.add(WOLF_BLACK_CARD);
+                        entries.add(WOLF_CHESTNUT_CARD);
+                        entries.add(WOLF_PALE_CARD);
+                        entries.add(WOLF_RUSTY_CARD);
+                        entries.add(WOLF_SNOWY_CARD);
+                        entries.add(WOLF_SPOTTED_CARD);
+                        entries.add(WOLF_STRIPED_CARD);
+                        entries.add(WOLF_WOODS_CARD);
+                        entries.add(WOLF_ASHEN_ANGRY_CARD);
+                        entries.add(WOLF_BLACK_ANGRY_CARD);
+                        entries.add(WOLF_CHESTNUT_ANGRY_CARD);
+                        entries.add(WOLF_PALE_ANGRY_CARD);
+                        entries.add(WOLF_RUSTY_ANGRY_CARD);
+                        entries.add(WOLF_SNOWY_ANGRY_CARD);
+                        entries.add(WOLF_SPOTTED_ANGRY_CARD);
+                        entries.add(WOLF_STRIPED_ANGRY_CARD);
+                        entries.add(WOLF_WOODS_ANGRY_CARD);
+                        entries.add(WOLF_ASHEN_ARMOR_CARD);
+                        entries.add(WOLF_BLACK_ARMOR_CARD);
+                        entries.add(WOLF_CHESTNUT_ARMOR_CARD);
+                        entries.add(WOLF_PALE_ARMOR_CARD);
+                        entries.add(WOLF_RUSTY_ARMOR_CARD);
+                        entries.add(WOLF_SNOWY_ARMOR_CARD);
+                        entries.add(WOLF_SPOTTED_ARMOR_CARD);
+                        entries.add(WOLF_STRIPED_ARMOR_CARD);
+                        entries.add(WOLF_WOODS_ARMOR_CARD);
 
                         for (String wolfBreed: wolf_breed) {
                             for (String color : collar_colors) {
@@ -249,46 +274,65 @@ public class CardModItemGroups {
                             }
                         }
 
-                        entries.add(CardModItems.PHANTOM_CARD);
+                        entries.add(PHANTOM_CARD);
 
-                        entries.add(CardModItems.CAVE_SPIDER_CARD);
-                        entries.add(CardModItems.SPIDER_CARD);
-                        entries.add(CardModItems.INVISIBLE_SPIDER_CARD);
+                        entries.add(CAVE_SPIDER_CARD);
+                        entries.add(SPIDER_CARD);
+                        entries.add(INVISIBLE_SPIDER_CARD);
 
-                        entries.add(CardModItems.CREEPER_CARD);
-                        entries.add(CardModItems.CHARGED_CREEPER_CARD);
+                        entries.add(CREAKING_CARD);
+                        entries.add(SLEEPING_CREAKING_CARD);
 
-                        entries.add(CardModItems.ZOMBIE_CARD);
-                        entries.add(CardModItems.HUSK_CARD);
-                        entries.add(CardModItems.DROWNED_CARD);
+                        entries.add(CREEPER_CARD);
+                        entries.add(CHARGED_CREEPER_CARD);
 
-                        entries.add(CardModItems.SKELETON_CARD);
-                        entries.add(CardModItems.BOGGED_CARD);
-                        entries.add(CardModItems.STRAY_CARD);
+                        entries.add(ZOMBIE_CARD);
+                        entries.add(HUSK_CARD);
+                        entries.add(DROWNED_CARD);
 
-                        entries.add(CardModItems.STRIDER_CARD);
+                        entries.add(HALLOWEEN_ZOMBIE_CARD);
+                        entries.add(CYBER_ZOMBIE_CARD);
 
-                        entries.add(CardModItems.WITHER_SKELETON_CARD);
+                        entries.add(EVOKER_CARD);
+                        entries.add(PILLAGER_CARD);
+                        entries.add(RAVAGER_CARD);
+                        entries.add(VEX_CARD);
+                        entries.add(VINDICATOR_CARD);
+                        entries.add(WITCH_CARD);
+                        entries.add(ILLUSIONER_CARD);
+                        entries.add(ICEOLOGER_CARD);
 
-                        entries.add(CardModItems.GHAST_CARD);
+                        entries.add(SKELETON_CARD);
+                        entries.add(BOGGED_CARD);
+                        entries.add(STRAY_CARD);
 
-                        entries.add(CardModItems.BLAZE_CARD);
+                        entries.add(STRIDER_CARD);
 
-                        entries.add(CardModItems.MAGMA_CUBE_CARD);
+                        entries.add(WITHER_SKELETON_CARD);
+                        entries.add(WITHER_CARD);
+                        entries.add(INVULNERABLE_WITHER_CARD);
 
-                        entries.add(CardModItems.PIGLIN_SWORD_CARD);
-                        entries.add(CardModItems.PIGLIN_CROSSBOW_CARD);
-                        entries.add(CardModItems.PIGLIN_BRUTE_CARD);
-                        entries.add(CardModItems.ZOMBIFIED_PIGLIN_CARD);
+                        entries.add(GHAST_CARD);
 
-                        entries.add(CardModItems.HOGLIN_CARD);
-                        entries.add(CardModItems.ZOMBIFIED_HOGLIN_CARD);
+                        entries.add(BLAZE_CARD);
+                        entries.add(WILDFIRE_CARD);
 
-                        entries.add(CardModItems.ENDER_DRAGON_CARD);
+                        entries.add(MAGMA_CUBE_CARD);
 
-                        entries.add(CardModItems.ENDERMAN_CARD);
+                        entries.add(PIGLIN_SWORD_CARD);
+                        entries.add(PIGLIN_CROSSBOW_CARD);
+                        entries.add(PIGLIN_BRUTE_CARD);
+                        entries.add(ZOMBIFIED_PIGLIN_CARD);
 
-                        entries.add(CardModItems.ENDERMITE_CARD);
+                        entries.add(HOGLIN_CARD);
+                        entries.add(ZOMBIFIED_HOGLIN_CARD);
+
+                        entries.add(ENDER_DRAGON_CARD);
+                        entries.add(GLITCHED_ENDER_DRAGON_CARD);
+
+                        entries.add(ENDERMAN_CARD);
+
+                        entries.add(ENDERMITE_CARD);
 
                         for (String color : shulker_colors) {
                             String cardName = color.toLowerCase().replace(" ", "_") + "_shulker_card";
@@ -299,10 +343,10 @@ public class CardModItemGroups {
                                 System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
                             }
                         }
-                        entries.add(CardModItems.SHULKER_CARD);
 
+                        entries.add(SHULKER_CARD);
 
-
+                        entries.add(INVALID_CARD);
 
 
                 }).build());

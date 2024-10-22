@@ -42,8 +42,10 @@
   "item.hanas_cards.series_two_card_pack": "Series Two Card Pack",
 
   "item.hanas_cards.series_one_expansion_one_card_pack": "Series One Expansion One Card Pack",
+  "item.hanas_cards.series_one_expansion_two_card_pack": "Series One Expansion Two Card Pack",
 
   "item.hanas_cards.allay_card": "Allay Card",
+  "item.hanas_cards.burning_allay_card": "Allay Card",
 
   "item.hanas_cards.armadillo_card": "Armadillo Card",
 
@@ -54,6 +56,7 @@
   "item.hanas_cards.blue_axolotl_card": "Blue Axolotl Card",
   "item.hanas_cards.green_axolotl_card": "Green Axolotl Card",
   "item.hanas_cards.melonoid_axolotl_card": "Melonoid Axolotl Card",
+  "item.hanas_cards.black_and_red_axolotl_card": "Black and Red Axolotl Card",
 
   "item.hanas_cards.screaming_lucy_axolotl_card": "Screaming Lucy Axolotl Card",
   "item.hanas_cards.cactus_axolotl_card": "Cactus Axolotl Card",
@@ -70,7 +73,10 @@
   "item.hanas_cards.pollinated_bee_card": "Pollinated Bee Card",
   "item.hanas_cards.gentle_bee_card": "Gentle Bee Card",
 
+  "item.hanas_cards.waldo_bee_card": "Waldo Bee Card",
+
   "item.hanas_cards.camel_card": "Camel Card",
+  "item.hanas_cards.pirate_camel_card": "Pirate Camel Card",
 
   "item.hanas_cards.dolphin_card": "Dolphin Card",
 
@@ -82,6 +88,10 @@
   "item.hanas_cards.cold_frog_card": "Cold Frog Card",
   "item.hanas_cards.tadpole_card": "Tadpole Card",
 
+  "item.hanas_cards.clown_temperate_frog_card": "Clown Temperate Frog Card",
+  "item.hanas_cards.clown_warm_frog_card": "Clown Warm Frog Card",
+  "item.hanas_cards.clown_cold_frog_card": "Clown Cold Frog Card",
+
   "item.hanas_cards.firefly_card": "Firefly Card",
 
   "item.hanas_cards.red_parrot_card": "Red Parrot Card",
@@ -89,6 +99,8 @@
   "item.hanas_cards.green_parrot_card": "Green Parrot Card",
   "item.hanas_cards.cyan_parrot_card": "Cyan Parrot Card",
   "item.hanas_cards.gray_parrot_card": "Gray Parrot Card",
+
+  "item.hanas_cards.cowboy_red_parrot_card": "Cowboy Red Parrot Card",
 
   "item.hanas_cards.squid_card": "Squid Card",
   "item.hanas_cards.glow_squid_card": "Glow Squid Card",
@@ -103,6 +115,8 @@
   "item.hanas_cards.killer_rabbit_card": "Killer Rabbit Card",
   "item.hanas_cards.salt_and_pepper_rabbit_card": "Salt and Pepper Rabbit Card",
   "item.hanas_cards.jumbo_rabbit_card": "Jumbo Rabbit Card",
+
+  "item.hanas_cards.copywritten_black_rabbit_card": "Copywritten Black Rabbit Card",
 
   "item.hanas_cards.iron_rabbit_card": "Iron Rabbit Card",
   "item.hanas_cards.copper_rabbit_card": "Copper Rabbit Card",
@@ -173,7 +187,6 @@
 
   "item.hanas_cards.rainbow_cow_card": "Rainbow Cow Card",
 
-
   "item.hanas_cards.donkey_card": "Donkey Card",
   "item.hanas_cards.saddled_donkey_card": "Saddled Donkey Card",
 
@@ -221,7 +234,6 @@
 
   "item.hanas_cards.rainbow_sheep_card": "Rainbow Sheep Card",
 
-
   "item.hanas_cards.pig_card": "Pig Card",
   "item.hanas_cards.flying_pig_card": "Flying Pig Card ✨",
 
@@ -261,8 +273,10 @@
   "item.hanas_cards.plains_nitwit_villager_card": "Plains Nitwit Villager Card",
   "item.hanas_cards.plains_cleric_villager_card": "Plains Cleric Villager Card",
 
+  "item.hanas_cards.scream_plains_unemployed_villager_card": "Scream Plains Unemployed Villager Card",
 
   "item.hanas_cards.iron_golem_card": "Iron Golem Card",
+  "item.hanas_cards.golden_golem_card": "Golden Golem Card",
   "item.hanas_cards.snow_golem_card": "Snow Golem Card",
   "item.hanas_cards.sheared_snow_golem_card": "Sheared Snow Golem Card",
 
@@ -471,12 +485,27 @@
   "item.hanas_cards.spider_card": "Spider Card",
   "item.hanas_cards.invisible_spider_card": "Invisible Spider Card",
 
+  "item.hanas_cards.creaking_card": "Creaking Card",
+  "item.hanas_cards.sleeping_creaking_card": "Sleeping Creaking Card",
+
   "item.hanas_cards.creeper_card": "Creeper Card",
   "item.hanas_cards.charged_creeper_card": "Charged Creeper Card",
 
   "item.hanas_cards.zombie_card": "Zombie Card",
   "item.hanas_cards.husk_card": "Husk Card",
   "item.hanas_cards.drowned_card": "Drowned Card",
+
+  "item.hanas_cards.cyber_zombie_card": "Cyber Zombie Card",
+  "item.hanas_cards.halloween_zombie_card": "Halloween Zombie Card",
+
+  "item.hanas_cards.evoker_card": "Evoker Card",
+  "item.hanas_cards.pillager_card": "Pillager Card",
+  "item.hanas_cards.ravager_card": "Ravager Card",
+  "item.hanas_cards.vex_card": "Vex Card",
+  "item.hanas_cards.vindicator_card": "Vindicator Card",
+  "item.hanas_cards.witch_card": "Witch Card",
+  "item.hanas_cards.illusioner_card": "Illusioner Card",
+  "item.hanas_cards.iceologer_card": "Iceologer Card",
 
   "item.hanas_cards.skeleton_card": "Skeleton Card",
   "item.hanas_cards.bogged_card": "Bogged Card",
@@ -485,10 +514,13 @@
   "item.hanas_cards.strider_card": "Strider Card",
 
   "item.hanas_cards.wither_skeleton_card": "Wither Skeleton Card",
+  "item.hanas_cards.wither_card": "Wither Card",
+  "item.hanas_cards.invulnerable_wither_card": "Invulnerable Wither Card",
 
   "item.hanas_cards.ghast_card": "Ghast Card",
 
   "item.hanas_cards.blaze_card": "Blaze Card",
+  "item.hanas_cards.wildfire_card": "Wildfire Card",
 
   "item.hanas_cards.magma_cube_card": "Magma Cube Card",
 
@@ -501,6 +533,7 @@
   "item.hanas_cards.zombified_hoglin_card": "Zoglin Card",
 
   "item.hanas_cards.ender_dragon_card": "Ender Dragon Card",
+  "item.hanas_cards.glitched_ender_dragon_card": "Glitched Ender Dragon Card",
 
   "item.hanas_cards.enderman_card": "Enderman Card",
 
@@ -523,6 +556,8 @@
   "item.hanas_cards.red_shulker_card": "Red Shulker Card",
   "item.hanas_cards.black_shulker_card": "Black Shulker Card",
   "item.hanas_cards.shulker_card": "Shulker Card",
+
+  "item.hanas_cards.invalid_card": "§kInvalid Card",
 
   "itemgroup.cards": "Hanas Cards",
 

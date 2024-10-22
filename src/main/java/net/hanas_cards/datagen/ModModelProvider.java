@@ -1,5 +1,6 @@
 package net.hanas_cards.datagen;
 
+import net.hanas_cards.config.ModConfigs;
 import net.hanas_cards.item.CardModItems;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -35,8 +36,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModPacks.SERIES_TWO_CARD_PACK, Models.GENERATED);
 
         itemModelGenerator.register(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.SERIES_ONE_EXPANSION_TWO_CARD_PACK, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ALLAY_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.BURNING_ALLAY_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ARMADILLO_CARD, Models.GENERATED);
 
@@ -47,6 +50,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.BLUE_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.GREEN_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.MELONOID_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.BLACK_AND_RED_AXOLOTL_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.CACTUS_AXOLOTL_CARD, Models.GENERATED);
@@ -61,9 +65,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.BEE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.ANGRY_POLLINATED_BEE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.POLLINATED_BEE_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.GENTLE_BEE_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.WALDO_BEE_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.CAMEL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PIRATE_CAMEL_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.DOLPHIN_CARD, Models.GENERATED);
 
@@ -75,6 +82,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.COLD_FROG_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.TADPOLE_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.CLOWN_TEMPERATE_FROG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.CLOWN_WARM_FROG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.CLOWN_COLD_FROG_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.FIREFLY_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.RED_PARROT_CARD, Models.GENERATED);
@@ -82,6 +93,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.GREEN_PARROT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.CYAN_PARROT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.GRAY_PARROT_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.COWBOY_RED_PARROT_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.SQUID_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.GLOW_SQUID_CARD, Models.GENERATED);
@@ -97,6 +110,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.KILLER_RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SALT_AND_PEPPER_RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.JUMBO_RABBIT_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.COPYWRITTEN_BLACK_RABBIT_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.DIAMOND_RABBIT_CARD, Models.GENERATED);
 
@@ -154,9 +169,10 @@ public class ModModelProvider extends FabricModelProvider {
             Item item = CardModItems.get(cardName);
             if (item != null) {
                 itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
-            } else {
-                // Log error
+                if (ModConfigs.enableDebug) {
+                    System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
+                }
+            } else if (ModConfigs.enableDebug) {
                 System.err.println("Item not found for: " + cardName + " In ModelProvider");
             }
         }
@@ -185,23 +201,26 @@ public class ModModelProvider extends FabricModelProvider {
 
         for (String biome : villager_card_biomes) {
             for (String profession : villager_card_professions) {
-                // Ensure card name generation is consistent with registration
                 String cardName = biome.trim().toLowerCase().replace(" ", "_") + "_"
                         + profession.trim().toLowerCase().replace(" ", "_") + "_villager_card";
 
-                // Fetch the item using the cardName
                 Item item = CardModItems.get(cardName);
 
                 if (item != null) {
                     itemModelGenerator.register(item, Models.GENERATED);
-                    System.out.println("Successfully registered model for: " + cardName);
-                } else {
-                    System.err.println("Failed to find and register item model for: " + cardName);
+                    if (ModConfigs.enableDebug) {
+                        System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
+                    };
+                } else if (ModConfigs.enableDebug) {
+                    System.err.println("Item not found for: " + cardName + " In ModelProvider");
                 }
             }
         }
 
+        itemModelGenerator.register(CardModItems.SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.IRON_GOLEM_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.GOLDEN_GOLEM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SNOW_GOLEM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SHEARED_SNOW_GOLEM_CARD, Models.GENERATED);
 
@@ -250,20 +269,17 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.WOLF_STRIPED_ARMOR_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WOLF_WOODS_ARMOR_CARD, Models.GENERATED);
 
-        //itemModelGenerator.register(CardModItems.TAMED_WOLF_ASHEN_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-        //itemModelGenerator.register(TAMED_WOLF_BLACK_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-
         for (String wolfBreed: wolf_breed) {
             for (String color : collar_colors) {
                 String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
                         color.toLowerCase().replace(" ", "_") + "_card";
                 Item item = CardModItems.get(cardName);
                 if (item != null) {
-                    //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
                     itemModelGenerator.register(item, Models.GENERATED);
-                    System.out.println("Successfully registered model for: " + cardName);
-                } else {
-                    // Log error
+                    if (ModConfigs.enableDebug) {
+                        System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
+                    };
+                } else if (ModConfigs.enableDebug) {
                     System.err.println("Item not found for: " + cardName + " In ModelProvider");
                 }
             }
@@ -275,12 +291,27 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.SPIDER_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.INVISIBLE_SPIDER_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.CREAKING_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.SLEEPING_CREAKING_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.CREEPER_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.CHARGED_CREEPER_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ZOMBIE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.HUSK_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.DROWNED_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.HALLOWEEN_ZOMBIE_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.CYBER_ZOMBIE_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.EVOKER_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PILLAGER_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.RAVAGER_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.VEX_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.VINDICATOR_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.WITCH_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.ILLUSIONER_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.ICEOLOGER_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.SKELETON_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.BOGGED_CARD, Models.GENERATED);
@@ -289,10 +320,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.STRIDER_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.WITHER_SKELETON_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.WITHER_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.INVULNERABLE_WITHER_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.GHAST_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.BLAZE_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.WILDFIRE_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.MAGMA_CUBE_CARD, Models.GENERATED);
 
@@ -305,6 +339,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.ZOMBIFIED_HOGLIN_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ENDER_DRAGON_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.GLITCHED_ENDER_DRAGON_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ENDERMAN_CARD, Models.GENERATED);
 
@@ -315,12 +350,16 @@ public class ModModelProvider extends FabricModelProvider {
             Item item = CardModItems.get(cardName);
             if (item != null) {
                 itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
+                if (ModConfigs.enableDebug) {
+                    System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
+                };
+            } else if (ModConfigs.enableDebug) {
                 System.err.println("Item not found for: " + cardName + " In ModelProvider");
             }
         }
+
         itemModelGenerator.register(CardModItems.SHULKER_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.INVALID_CARD, Models.GENERATED);
     }
 }

@@ -22,13 +22,9 @@ todo
  ----
  villager variants (village pack update)
  ----
- evoker, vex, vindicator, pillager, witch, ravager, illusioner, Iceologer (Pillage pack update)
- ----
  elder guardian, guardian, pufferfish, + new ocean mob variants (Sea pack update)
  ----
  panda + variants (Panda pack update)
- ----
- creaking, wither (Spooky pack update)
  ----
  warden, silverfish, llamas, goats, wandering trader, trader llama (Mountain exploration pack update)
  ----
@@ -54,12 +50,27 @@ public class CardModItems {
 
     private static final Map<String, Item> ITEMS = new HashMap<>();
 
+    //public static final Item FLINT_SOURCE_CARD = registerItem("flint_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.FLINT, 1, Rarity.COMMON));
+    //public static final Item STONE_SOURCE_CARD = registerItem("stone_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.STONE, 1, Rarity.COMMON));
+    //public static final Item IRON_SOURCE_CARD = registerItem("iron_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.IRON, 1, Rarity.COMMON));
+    //public static final Item EMERALD_SOURCE_CARD = registerItem("emerald_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.EMERALD, 1, Rarity.COMMON));
+    //public static final Item NETHERRACK_SOURCE_CARD = registerItem("netherrack_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.NETHERRACK, 1, Rarity.COMMON));
+    //public static final Item ENDSTONE_SOURCE_CARD = registerItem("endstone_source_card",
+    //        new SourceCardItem(new Item.Settings(), SourceType.ENDSTONE, 1, Rarity.COMMON));
+
 
     //Overworld
     //Passive
     // Allay
     public static final Item ALLAY_CARD = registerItem("allay_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Allay", "Default", Rarity.UNCOMMON));
+    public static final Item BURNING_ALLAY_CARD = registerItem("burning_allay_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Allay", "Burning", Rarity.RARE));
 
     // Armadillo
     public static final Item ARMADILLO_CARD = registerItem("armadillo_card",
@@ -80,6 +91,8 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "§2Green", Rarity.UNCOMMON));
     public static final Item MELONOID_AXOLOTL_CARD = registerItem("melonoid_axolotl_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Melonoid", Rarity.RARE));
+    public static final Item BLACK_AND_RED_AXOLOTL_CARD = registerItem("black_and_red_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "§8Black §7And §cRed", Rarity.RARE));
 
     public static final Item SCREAMING_LUCY_AXOLOTL_CARD = registerItem("screaming_lucy_axolotl_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Screaming §dLucy", Rarity.EPIC));
@@ -111,13 +124,19 @@ public class CardModItems {
     public static final Item GENTLE_BEE_CARD = registerItem("gentle_bee_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Bee", "Gentle", Rarity.EPIC));
 
+    public static final Item WALDO_BEE_CARD = registerItem("waldo_bee_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Bee", "Waldo", Rarity.COMMON));
+
     // Camel
     public static final Item CAMEL_CARD = registerItem("camel_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Camel", "Default", Rarity.COMMON));
 
+    public static final Item PIRATE_CAMEL_CARD = registerItem("pirate_camel_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Camel", "Pirate", Rarity.COMMON));
+
     // Dolphin
     public static final Item DOLPHIN_CARD = registerItem("dolphin_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Dolphin", "Defualt", Rarity.COMMON));
+            new CardItem(new Item.Settings(), "§2Overworld", "Dolphin", "Default", Rarity.COMMON));
 
     // Fox
     public static final Item FOX_CARD = registerItem("fox_card",
@@ -135,6 +154,13 @@ public class CardModItems {
     public static final Item TADPOLE_CARD = registerItem("tadpole_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Frog", "Tadpole", Rarity.COMMON));
 
+    public static final Item CLOWN_TEMPERATE_FROG_CARD = registerItem("clown_temperate_frog_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Frog", "Clown Temperate", Rarity.COMMON));
+    public static final Item CLOWN_WARM_FROG_CARD = registerItem("clown_warm_frog_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Frog", "Clown Warm", Rarity.COMMON));
+    public static final Item CLOWN_COLD_FROG_CARD = registerItem("clown_cold_frog_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Frog", "Clown Cold", Rarity.UNCOMMON));
+
     // Firefly
     public static final Item FIREFLY_CARD = registerItem("firefly_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Passive", "Firefly", Rarity.UNCOMMON));
@@ -150,6 +176,9 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Parrot", "Cyan", Rarity.UNCOMMON));
     public static final Item GRAY_PARROT_CARD = registerItem("gray_parrot_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Parrot", "Gray", Rarity.UNCOMMON));
+
+    public static final Item COWBOY_RED_PARROT_CARD = registerItem("cowboy_red_parrot_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Parrot", "Cowboy Red", Rarity.UNCOMMON));
 
     // Squid
     public static final Item SQUID_CARD = registerItem("squid_card",
@@ -246,8 +275,8 @@ public class CardModItems {
     public static final Item JUMBO_RABBIT_CARD = registerItem("jumbo_rabbit_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Jumbo", Rarity.RARE));
 
-    public static final Item DIAMOND_RABBIT_CARD = registerItem("diamond_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§3Diamond", Rarity.EPIC));
+    public static final Item COPYWRITTEN_BLACK_RABBIT_CARD = registerItem("copywritten_black_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Copywritten §8Black", Rarity.UNCOMMON));
 
     public static final Item PEARLARIUM_RABBIT_CARD = registerItem("pearlarium_rabbit_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Pearlarium", Rarity.EPIC));
@@ -262,6 +291,8 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Lapis", Rarity.RARE));
     public static final Item QUARTZ_RABBIT_CARD = registerItem("quartz_rabbit_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Quartz", Rarity.RARE));
+    public static final Item DIAMOND_RABBIT_CARD = registerItem("diamond_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§3Diamond", Rarity.EPIC));
 
     // Sheep
     public static final String[] sheep_colors = {
@@ -374,9 +405,14 @@ public class CardModItems {
         System.out.println("Successfully registered Villager Cards");
     }
 
+    public static final Item SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD = registerItem("scream_plains_unemployed_villager_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Villager", "Default", Rarity.COMMON));
+
     // Golem
     public static final Item IRON_GOLEM_CARD = registerItem("iron_golem_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Golem", "Default", Rarity.COMMON));
+    public static final Item GOLDEN_GOLEM_CARD = registerItem("golden_golem_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Golem", "Default", Rarity.RARE));
     public static final Item SNOW_GOLEM_CARD = registerItem("snow_golem_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Golem", "Default", Rarity.COMMON));
     public static final Item SHEARED_SNOW_GOLEM_CARD = registerItem("sheared_snow_golem_card",
@@ -387,7 +423,7 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Turtle", "Default", Rarity.COMMON));
 
     // Pet
-    // Occelot & Cat
+    // Ocelot & Cat
     public static final Item OCELOT_CARD = registerItem("ocelot_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Cat", "Default", Rarity.RARE));
     public static final Item BLACK_CAT_CARD = registerItem("black_cat_card",
@@ -552,6 +588,11 @@ public class CardModItems {
     public static final Item INVISIBLE_SPIDER_CARD = registerItem("invisible_spider_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Spider", "§9Invisible", Rarity.UNCOMMON));
 
+    //Creaking
+    public static final Item CREAKING_CARD = registerItem("creaking_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Creaking", "Default", Rarity.RARE));
+    public static final Item SLEEPING_CREAKING_CARD = registerItem("sleeping_creaking_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Creeper", "Sleeping", Rarity.RARE));
     //Creeper
     public static final Item CREEPER_CARD = registerItem("creeper_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Creeper", "Default", Rarity.UNCOMMON));
@@ -565,6 +606,29 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Husk", Rarity.UNCOMMON));
     public static final Item DROWNED_CARD = registerItem("drowned_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Drowned", Rarity.UNCOMMON));
+
+    public static final Item HALLOWEEN_ZOMBIE_CARD = registerItem("halloween_zombie_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Halloween", Rarity.COMMON));
+    public static final Item CYBER_ZOMBIE_CARD = registerItem("cyber_zombie_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "§3CYBER", Rarity.RARE));
+
+    //Pillager
+    public static final Item EVOKER_CARD = registerItem("evoker_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Evoker", Rarity.COMMON));
+    public static final Item PILLAGER_CARD = registerItem("pillager_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Default", Rarity.COMMON));
+    public static final Item RAVAGER_CARD = registerItem("ravager_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Ravager", Rarity.COMMON));
+    public static final Item VEX_CARD = registerItem("vex_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Vex", Rarity.COMMON));
+    public static final Item VINDICATOR_CARD = registerItem("vindicator_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Vindicator", Rarity.COMMON));
+    public static final Item WITCH_CARD = registerItem("witch_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Witch", Rarity.COMMON));
+    public static final Item ILLUSIONER_CARD = registerItem("illusioner_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Illusioner", Rarity.UNCOMMON));
+    public static final Item ICEOLOGER_CARD = registerItem("iceologer_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pillager", "Iceologer", Rarity.RARE));
 
     //Skeleton
     public static final Item SKELETON_CARD = registerItem("skeleton_card",
@@ -581,13 +645,19 @@ public class CardModItems {
     //Hostile
     public static final Item WITHER_SKELETON_CARD = registerItem("wither_skeleton_card",
             new CardItem(new Item.Settings(), "§cNether", "Skeleton", "Wither", Rarity.UNCOMMON));
+    public static final Item WITHER_CARD = registerItem("wither_card",
+            new CardItem(new Item.Settings(), "§cNether", "Undead Mob", "Default", Rarity.EPIC));
+    public static final Item INVULNERABLE_WITHER_CARD = registerItem("invulnerable_wither_card",
+            new CardItem(new Item.Settings(), "§cNether", "Undead Mob", "Invulnerable", Rarity.EPIC));
 
     public static final Item GHAST_CARD = registerItem("ghast_card",
-            new CardItem(new Item.Settings(), "§cNether", "Ghast", "Defualt", Rarity.COMMON));
+            new CardItem(new Item.Settings(), "§cNether", "Ghast", "Default", Rarity.COMMON));
 
     //Blaze
     public static final Item BLAZE_CARD = registerItem("blaze_card",
             new CardItem(new Item.Settings(), "§cNether", "Blaze", "Default", Rarity.COMMON));
+    public static final Item WILDFIRE_CARD = registerItem("wildfire_card",
+            new CardItem(new Item.Settings(), "§cNether", "Blaze", "Wildfire", Rarity.RARE));
 
     //Magma Cube
     public static final Item MAGMA_CUBE_CARD = registerItem("magma_cube_card",
@@ -613,6 +683,8 @@ public class CardModItems {
     //Ender Dragon
     public static final Item ENDER_DRAGON_CARD = registerItem("ender_dragon_card",
             new CardItem(new Item.Settings(), "§5End", "Dragon", "Default", Rarity.COMMON));
+    public static final Item GLITCHED_ENDER_DRAGON_CARD = registerItem("glitched_ender_dragon_card",
+            new CardItem(new Item.Settings(), "§5End", "Dragon", "Glitched", CustomCardRarity.GLITCHED));
     //Enderman
     public static final Item ENDERMAN_CARD = registerItem("enderman_card",
             new CardItem(new Item.Settings(), "§2Overworld §cNether §5End", "Enderman", "Default", Rarity.COMMON));
@@ -666,6 +738,8 @@ public class CardModItems {
     public static final Item SHULKER_CARD = registerItem("shulker_card",
             new CardItem(new Item.Settings(), "§5End", "Shulker", "Default", Rarity.COMMON));
 
+    public static final Item INVALID_CARD = registerItem("invalid_card",
+            new CardItem(new Item.Settings(), "§kEnd", "§kInvalid", "§kNull", CustomCardRarity.GLITCHED));
 
     public static Item get(String name) {
         return ITEMS.get(name);

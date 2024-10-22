@@ -22,7 +22,7 @@ import static net.hanas_cards.util.TextUtils.*;
 public class CardItem extends Item {
 
     private final String dimension;
-    private final String mobType;
+    private final String cardType;
     private final String variant;
     private final Rarity rarity;
     private final CustomCardRarity customRarity;
@@ -30,10 +30,10 @@ public class CardItem extends Item {
     /**
      * Card Item Using Vanilla Rarity
      */
-    public CardItem(Settings settings, String dimension, String mob_type, String variant, Rarity rarity) {
+    public CardItem(Settings settings, String dimension, String card_type, String variant, Rarity rarity) {
         super(settings.rarity(rarity).maxCount(16));
         this.dimension = dimension;
-        this.mobType = mob_type;
+        this.cardType = card_type;
         this.variant = variant;
         this.rarity = rarity;
         this.customRarity = null;
@@ -42,10 +42,10 @@ public class CardItem extends Item {
     /**
      * Card Item Using Custom Rarity
      */
-    public CardItem(Settings settings, String dimension, String mob_type, String variant, CustomCardRarity customRarity) {
+    public CardItem(Settings settings, String dimension, String card_type, String variant, CustomCardRarity customRarity) {
         super(settings.maxCount(16));
         this.dimension = dimension;
-        this.mobType = mob_type;
+        this.cardType = card_type;
         this.variant = variant;
         this.rarity = null;
         this.customRarity = customRarity;
@@ -58,7 +58,7 @@ public class CardItem extends Item {
             MutableText cardName = Text.translatable("item.cardItem.hanas_cards.name");
             String cleanVariant = variant.replaceAll("§.", "");
             return Text.literal(colorCode + toTitleCase(cleanVariant) + " ")
-                    .append(Text.literal(colorCode + toTitleCase(mobType) + " "))
+                    .append(Text.literal(colorCode + toTitleCase(cardType) + " "))
                     .append(cardName.formatted(customRarity.getFormatting()))
                     .formatted(customRarity.getFormatting());
         }
@@ -112,6 +112,20 @@ public class CardItem extends Item {
         return new CardComponent(newGrading, "Graded", List.of("tag"));
     }
 
+    public Rarity getRarity() {
+        return this.rarity; // This assumes you already have the Rarity field defined.
+    }
+
+    /**
+     * Get the custom rarity of the card.
+     *
+     * @return the custom rarity, or null if not set.
+     */
+
+    public CustomCardRarity getCustomRarity() {
+        return customRarity;
+    }
+
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal(""));
@@ -128,7 +142,7 @@ public class CardItem extends Item {
         }
 
         tooltip.add(Text.literal("---------------------"));
-        tooltip.add(Text.translatable("§fType: §7§l" + toTitleCase(mobType)));
+        tooltip.add(Text.translatable("§fType: §7§l" + toTitleCase(cardType)));
         tooltip.add(Text.literal("---------------------"));
 
         String boldedVariant = variant.replaceAll("(§.)", "$1§l");

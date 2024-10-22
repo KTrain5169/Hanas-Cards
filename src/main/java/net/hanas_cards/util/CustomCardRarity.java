@@ -4,6 +4,11 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.StringIdentifiable;
 
 public enum CustomCardRarity implements StringIdentifiable {
+    GLITCHED(
+            new String[] { "§3", "§c" },
+            new Formatting[] { Formatting.DARK_AQUA, Formatting.RED },
+            "Glitched"
+    ),
     MYTHIC(
             new String[] { "§4", "§c", "§6", "§e", "§a", "§b", "§9", "§d", "§5" },
             new Formatting[] { Formatting.DARK_RED, Formatting.RED, Formatting.GOLD, Formatting.YELLOW,

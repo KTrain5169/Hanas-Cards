@@ -11,6 +11,8 @@ import java.util.function.UnaryOperator;
 public class ModDataComponentTypes {
     public static final ComponentType<CardComponent> CARD_COMPONENT = register("card_component",
             builder -> builder.codec(CardComponent.CODEC));
+    //public static final ComponentType<SourceCardComponent> SOURCE_CARD_COMPONENT = register("source_card_component",
+    //        builder -> builder.codec(SourceCardComponent.CODEC));
 
     // Generalized register method
     private static <T> ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {

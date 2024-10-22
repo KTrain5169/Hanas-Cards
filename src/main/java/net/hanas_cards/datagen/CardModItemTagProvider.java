@@ -1,5 +1,6 @@
 package net.hanas_cards.datagen;
 
+import com.mojang.datafixers.types.templates.Tag;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.hanas_cards.HanasCardsMod;
@@ -9,7 +10,10 @@ import net.minecraft.data.client.Models;
 import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.TagKey;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static net.hanas_cards.item.CardModItems.*;
@@ -36,7 +40,10 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.ANGRY_BEE_CARD.asItem())
                 .add(CardModItems.BEE_CARD.asItem())
 
+                .add(CardModItems.WALDO_BEE_CARD.asItem())
+
                 .add(CardModItems.CAMEL_CARD.asItem())
+                .add(CardModItems.PIRATE_CAMEL_CARD.asItem())
 
                 .add(CardModItems.DOLPHIN_CARD.asItem())
 
@@ -46,6 +53,9 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.TEMPERATE_FROG_CARD.asItem())
                 .add(CardModItems.WARM_FROG_CARD.asItem())
                 .add(CardModItems.TADPOLE_CARD.asItem())
+
+                .add(CardModItems.CLOWN_TEMPERATE_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_WARM_FROG_CARD.asItem())
 
                 .add(CardModItems.SQUID_CARD.asItem())
                 .add(CardModItems.GLOW_SQUID_CARD.asItem())
@@ -68,6 +78,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.MULE_CARD.asItem())
 
                 .add(CardModItems.PIG_CARD.asItem())
+
+                .add(CardModItems.SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD.asItem())
 
                 .add(CardModItems.IRON_GOLEM_CARD.asItem())
                 .add(CardModItems.SNOW_GOLEM_CARD.asItem())
@@ -92,6 +104,15 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
                 .add(CardModItems.ZOMBIE_CARD.asItem())
 
+                .add(CardModItems.HALLOWEEN_ZOMBIE_CARD.asItem())
+
+                .add(CardModItems.EVOKER_CARD.asItem())
+                .add(CardModItems.PILLAGER_CARD.asItem())
+                .add(CardModItems.RAVAGER_CARD.asItem())
+                .add(CardModItems.VEX_CARD.asItem())
+                .add(CardModItems.VINDICATOR_CARD.asItem())
+                .add(CardModItems.WITCH_CARD.asItem())
+
                 .add(CardModItems.SKELETON_CARD.asItem())
 
                 .add(CardModItems.STRIDER_CARD.asItem())
@@ -109,6 +130,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.ENDERMITE_CARD.asItem());
 
         getOrCreateTagBuilder(CardModTags.Items.UNCOMMON_CARDS)
+                .add(CardModItems.ALLAY_CARD.asItem())
+
                 .add(CardModItems.BLUE_AXOLOTL_CARD.asItem())
                 .add(CardModItems.GREEN_AXOLOTL_CARD.asItem())
                 .add(CardModItems.SKELETON_AXOLOTL_CARD.asItem())
@@ -124,6 +147,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.IRON_PIG_CARD.asItem())
                 .add(CardModItems.COPPER_PIG_CARD.asItem())
 
+                .add(CardModItems.CLOWN_COLD_FROG_CARD.asItem())
+
                 .add(CardModItems.FIREFLY_CARD.asItem())
 
                 .add(CardModItems.RED_PARROT_CARD.asItem())
@@ -131,6 +156,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.GREEN_PARROT_CARD.asItem())
                 .add(CardModItems.CYAN_PARROT_CARD.asItem())
                 .add(CardModItems.GRAY_PARROT_CARD.asItem())
+
+                .add(CardModItems.COWBOY_RED_PARROT_CARD.asItem())
 
                 .add(CardModItems.KILLER_RABBIT_CARD.asItem())
                 .add(CardModItems.IRON_RABBIT_CARD.asItem())
@@ -155,13 +182,19 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.HUSK_CARD.asItem())
                 .add(CardModItems.DROWNED_CARD.asItem())
 
+                .add(CardModItems.ILLUSIONER_CARD.asItem())
+
                 .add(CardModItems.BOGGED_CARD.asItem())
                 .add(CardModItems.STRAY_CARD.asItem())
 
                 .add(CardModItems.WITHER_SKELETON_CARD.asItem());
 
         getOrCreateTagBuilder(CardModTags.Items.RARE_CARDS)
+                .add(CardModItems.BURNING_ALLAY_CARD.asItem())
+
                 .add(CardModItems.MELONOID_AXOLOTL_CARD.asItem())
+                .add(CardModItems.BLACK_AND_RED_AXOLOTL_CARD.asItem())
+
                 .add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD.asItem())
 
                 .add(CardModItems.LAPIS_CHICKEN_CARD.asItem())
@@ -174,6 +207,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.QUARTZ_SHEEP_CARD.asItem())
                 .add(CardModItems.LAPIS_PIG_CARD.asItem())
                 .add(CardModItems.QUARTZ_PIG_CARD.asItem())
+
+                .add(CardModItems.GOLDEN_GOLEM_CARD.asItem())
 
                 .add(CardModItems.SNIFFER_CARD.asItem())
 
@@ -188,7 +223,17 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.OCELOT_CARD.asItem())
                 .add(CardModItems.BLACK_CAT_CARD.asItem())
 
-                .add(CardModItems.ZOMBIFIED_HOGLIN_CARD.asItem());
+                .add(CardModItems.CREAKING_CARD.asItem())
+                .add(CardModItems.SLEEPING_CREAKING_CARD.asItem())
+
+                .add(CardModItems.CYBER_ZOMBIE_CARD.asItem())
+
+                .add(CardModItems.ICEOLOGER_CARD.asItem())
+
+                .add(CardModItems.WILDFIRE_CARD.asItem())
+
+                .add(CardModItems.ZOMBIFIED_HOGLIN_CARD.asItem())
+                ;
 
         getOrCreateTagBuilder(CardModTags.Items.EPIC_CARDS)
                 .add(CardModItems.DIAMOND_CHICKEN_CARD.asItem())
@@ -208,8 +253,15 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.PETRAMIUNIUM_SHEEP_CARD.asItem())
                 .add(CardModItems.PEARLARIUM_PIG_CARD.asItem())
                 .add(CardModItems.PETRAMIUNIUM_PIG_CARD.asItem())
+
+                .add(CardModItems.WITHER_CARD.asItem())
+                .add(CardModItems.INVULNERABLE_WITHER_CARD.asItem())
         ;
 
+        getOrCreateTagBuilder(CardModTags.Items.GLITCHED_CARDS)
+                .add(CardModItems.GLITCHED_ENDER_DRAGON_CARD.asItem())
+                .add(CardModItems.INVALID_CARD.asItem())
+        ;
 
         getOrCreateTagBuilder(CardModTags.Items.MYTHIC_CARDS)
                 .add(CardModItems.RAINBOW_SHEEP_CARD.asItem());
@@ -218,12 +270,18 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.FLYING_PIG_CARD.asItem());
 
         getOrCreateTagBuilder(CardModTags.Items.PASSIVE_MOB_CARDS)
+                .add(CardModItems.ALLAY_CARD.asItem())
+                .add(CardModItems.BURNING_ALLAY_CARD.asItem())
+
                 .add(CardModItems.ARMADILLO_CARD.asItem())
 
                 .add(CardModItems.LUCY_AXOLOTL_CARD.asItem())
                 .add(CardModItems.WILD_AXOLOTL_CARD.asItem())
                 .add(CardModItems.GOLD_AXOLOTL_CARD.asItem())
                 .add(CardModItems.CYAN_AXOLOTL_CARD.asItem())
+                .add(CardModItems.MELONOID_AXOLOTL_CARD.asItem())
+                .add(CardModItems.BLACK_AND_RED_AXOLOTL_CARD.asItem())
+
                 .add(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD.asItem())
                 .add(CardModItems.CACTUS_AXOLOTL_CARD.asItem())
                 .add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD.asItem())
@@ -235,13 +293,19 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
                 .add(CardModItems.CAMEL_CARD.asItem())
 
+                .add(CardModItems.PIRATE_CAMEL_CARD.asItem())
+
                 .add(CardModItems.FOX_CARD.asItem())
                 .add(CardModItems.SNOW_FOX_CARD.asItem())
 
-                .add(CardModItems.BAT_CARD.asItem())
+                .add(CardModItems.TEMPERATE_FROG_CARD.asItem())
                 .add(CardModItems.WARM_FROG_CARD.asItem())
                 .add(CardModItems.COLD_FROG_CARD.asItem())
                 .add(CardModItems.TADPOLE_CARD.asItem())
+
+                .add(CardModItems.CLOWN_TEMPERATE_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_WARM_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_COLD_FROG_CARD.asItem())
 
                 .add(CardModItems.FIREFLY_CARD.asItem())
 
@@ -250,6 +314,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.GREEN_PARROT_CARD.asItem())
                 .add(CardModItems.CYAN_PARROT_CARD.asItem())
                 .add(CardModItems.GRAY_PARROT_CARD.asItem())
+
+                .add(CardModItems.COWBOY_RED_PARROT_CARD.asItem())
 
                 .add(CardModItems.SQUID_CARD.asItem())
                 .add(CardModItems.GLOW_SQUID_CARD.asItem())
@@ -263,6 +329,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.GOLD_RABBIT_CARD.asItem())
                 .add(CardModItems.SALT_AND_PEPPER_RABBIT_CARD.asItem())
                 .add(CardModItems.JUMBO_RABBIT_CARD.asItem())
+
+                .add(CardModItems.COPYWRITTEN_BLACK_RABBIT_CARD.asItem())
 
                 .add(CardModItems.PEARLARIUM_RABBIT_CARD.asItem())
                 .add(CardModItems.PETRAMIUNIUM_RABBIT_CARD.asItem())
@@ -328,6 +396,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.LAPIS_PIG_CARD.asItem())
                 .add(CardModItems.QUARTZ_PIG_CARD.asItem())
 
+                .add(CardModItems.SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD.asItem())
+
                 .add(CardModItems.SNOW_GOLEM_CARD.asItem())
                 .add(CardModItems.SHEARED_SNOW_GOLEM_CARD.asItem())
 
@@ -354,11 +424,14 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.BEE_CARD.asItem())
                 .add(CardModItems.ANGRY_POLLINATED_BEE_CARD.asItem())
                 .add(CardModItems.POLLINATED_BEE_CARD.asItem())
+
                 .add(CardModItems.GENTLE_BEE_CARD.asItem())
+                .add(CardModItems.WALDO_BEE_CARD.asItem())
 
                 .add(CardModItems.DOLPHIN_CARD.asItem())
 
                 .add(CardModItems.IRON_GOLEM_CARD.asItem())
+                .add(CardModItems.GOLDEN_GOLEM_CARD.asItem())
 
                 .add(CardModItems.WOLF_ASHEN_CARD.asItem())
                 .add(CardModItems.WOLF_BLACK_CARD.asItem())
@@ -390,6 +463,9 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.SPIDER_CARD.asItem())
                 .add(CardModItems.INVISIBLE_SPIDER_CARD.asItem())
 
+                .add(CardModItems.CREAKING_CARD.asItem())
+                .add(CardModItems.SLEEPING_CREAKING_CARD.asItem())
+
                 .add(CardModItems.CREEPER_CARD.asItem())
                 .add(CardModItems.CHARGED_CREEPER_CARD.asItem())
 
@@ -397,15 +473,30 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.HUSK_CARD.asItem())
                 .add(CardModItems.DROWNED_CARD.asItem())
 
+                .add(CardModItems.HALLOWEEN_ZOMBIE_CARD.asItem())
+                .add(CardModItems.CYBER_ZOMBIE_CARD.asItem())
+
+                .add(CardModItems.EVOKER_CARD.asItem())
+                .add(CardModItems.PILLAGER_CARD.asItem())
+                .add(CardModItems.RAVAGER_CARD.asItem())
+                .add(CardModItems.VEX_CARD.asItem())
+                .add(CardModItems.VINDICATOR_CARD.asItem())
+                .add(CardModItems.WITCH_CARD.asItem())
+                .add(CardModItems.ILLUSIONER_CARD.asItem())
+                .add(CardModItems.ICEOLOGER_CARD.asItem())
+
                 .add(CardModItems.SKELETON_CARD.asItem())
                 .add(CardModItems.BOGGED_CARD.asItem())
                 .add(CardModItems.STRAY_CARD.asItem())
 
                 .add(CardModItems.WITHER_SKELETON_CARD.asItem())
+                .add(CardModItems.WITHER_CARD.asItem())
+                .add(CardModItems.INVULNERABLE_WITHER_CARD.asItem())
 
                 .add(CardModItems.GHAST_CARD.asItem())
 
                 .add(CardModItems.BLAZE_CARD.asItem())
+                .add(CardModItems.WILDFIRE_CARD.asItem())
 
                 .add(CardModItems.MAGMA_CUBE_CARD.asItem())
 
@@ -418,6 +509,7 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.ZOMBIFIED_HOGLIN_CARD.asItem())
 
                 .add(CardModItems.ENDER_DRAGON_CARD.asItem())
+                .add(CardModItems.GLITCHED_ENDER_DRAGON_CARD.asItem())
 
                 .add(CardModItems.ENDERMAN_CARD.asItem())
 
@@ -437,6 +529,15 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.BLUE_AXOLOTL_CARD.asItem())
                 .add(CardModItems.GREEN_AXOLOTL_CARD.asItem())
                 .add(CardModItems.MELONOID_AXOLOTL_CARD.asItem())
+                .add(CardModItems.BLACK_AND_RED_AXOLOTL_CARD.asItem())
+
+                .add(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD.asItem())
+                .add(CardModItems.CACTUS_AXOLOTL_CARD.asItem())
+                .add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD.asItem())
+                .add(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD.asItem())
+
+                .add(CardModItems.SKELETON_AXOLOTL_CARD.asItem())
+                .add(CardModItems.PUMPKIN_AXOLOTL_CARD.asItem())
 
                 .add(CardModItems.BAT_CARD.asItem())
 
@@ -444,9 +545,12 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.BEE_CARD.asItem())
                 .add(CardModItems.ANGRY_POLLINATED_BEE_CARD.asItem())
                 .add(CardModItems.POLLINATED_BEE_CARD.asItem())
+
                 .add(CardModItems.GENTLE_BEE_CARD.asItem())
+                .add(CardModItems.WALDO_BEE_CARD.asItem())
 
                 .add(CardModItems.CAMEL_CARD.asItem())
+                .add(CardModItems.PIRATE_CAMEL_CARD.asItem())
 
                 .add(CardModItems.DOLPHIN_CARD.asItem())
 
@@ -458,6 +562,10 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.COLD_FROG_CARD.asItem())
                 .add(CardModItems.TADPOLE_CARD.asItem())
 
+                .add(CardModItems.CLOWN_TEMPERATE_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_WARM_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_COLD_FROG_CARD.asItem())
+
                 .add(CardModItems.FIREFLY_CARD.asItem())
 
                 .add(CardModItems.RED_PARROT_CARD.asItem())
@@ -465,6 +573,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.GREEN_PARROT_CARD.asItem())
                 .add(CardModItems.CYAN_PARROT_CARD.asItem())
                 .add(CardModItems.GRAY_PARROT_CARD.asItem())
+
+                .add(CardModItems.COWBOY_RED_PARROT_CARD.asItem())
 
                 .add(CardModItems.SQUID_CARD.asItem())
                 .add(CardModItems.GLOW_SQUID_CARD.asItem())
@@ -479,9 +589,27 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.KILLER_RABBIT_CARD.asItem())
                 .add(CardModItems.SALT_AND_PEPPER_RABBIT_CARD.asItem())
                 .add(CardModItems.JUMBO_RABBIT_CARD.asItem())
+
+                .add(CardModItems.COPYWRITTEN_BLACK_RABBIT_CARD.asItem())
+
+                .add(CardModItems.PEARLARIUM_RABBIT_CARD.asItem())
+                .add(CardModItems.PETRAMIUNIUM_RABBIT_CARD.asItem())
+                .add(CardModItems.IRON_RABBIT_CARD.asItem())
+                .add(CardModItems.COPPER_RABBIT_CARD.asItem())
+
+                .add(CardModItems.LAPIS_RABBIT_CARD.asItem())
+                .add(CardModItems.QUARTZ_RABBIT_CARD.asItem())
                 .add(CardModItems.DIAMOND_RABBIT_CARD.asItem())
 
                 .add(CardModItems.CHICKEN_CARD.asItem())
+
+                .add(CardModItems.PEARLARIUM_CHICKEN_CARD.asItem())
+                .add(CardModItems.PETRAMIUNIUM_CHICKEN_CARD.asItem())
+                .add(CardModItems.IRON_CHICKEN_CARD.asItem())
+                .add(CardModItems.COPPER_CHICKEN_CARD.asItem())
+
+                .add(CardModItems.LAPIS_CHICKEN_CARD.asItem())
+                .add(CardModItems.QUARTZ_CHICKEN_CARD.asItem())
                 .add(CardModItems.DIAMOND_CHICKEN_CARD.asItem())
 
                 .add(CardModItems.COW_CARD.asItem())
@@ -489,6 +617,14 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.BROWN_MOOSHROOM_CARD.asItem())
                 .add(CardModItems.MOOBLOOM_CARD.asItem())
                 .add(CardModItems.WOOLY_COW_CARD.asItem())
+
+                .add(CardModItems.PEARLARIUM_COW_CARD.asItem())
+                .add(CardModItems.PETRAMIUNIUM_COW_CARD.asItem())
+                .add(CardModItems.IRON_COW_CARD.asItem())
+                .add(CardModItems.COPPER_COW_CARD.asItem())
+
+                .add(CardModItems.LAPIS_COW_CARD.asItem())
+                .add(CardModItems.QUARTZ_COW_CARD.asItem())
 
                 .add(CardModItems.DONKEY_CARD.asItem())
                 .add(CardModItems.SADDLED_DONKEY_CARD.asItem())
@@ -500,11 +636,22 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
                 .add(CardModItems.MULE_CARD.asItem())
 
+                .add(CardModItems.PEARLARIUM_SHEEP_CARD.asItem())
+                .add(CardModItems.PETRAMIUNIUM_SHEEP_CARD.asItem())
+                .add(CardModItems.IRON_SHEEP_CARD.asItem())
+                .add(CardModItems.COPPER_SHEEP_CARD.asItem())
+
+                .add(CardModItems.LAPIS_SHEEP_CARD.asItem())
+                .add(CardModItems.QUARTZ_SHEEP_CARD.asItem())
+
                 .add(CardModItems.RAINBOW_SHEEP_CARD.asItem())
 
                 .add(CardModItems.PIG_CARD.asItem())
 
+                .add(CardModItems.SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD.asItem())
+
                 .add(CardModItems.IRON_GOLEM_CARD.asItem())
+                .add(CardModItems.GOLDEN_GOLEM_CARD.asItem())
                 .add(CardModItems.SNOW_GOLEM_CARD.asItem())
                 .add(CardModItems.SHEARED_SNOW_GOLEM_CARD.asItem())
 
@@ -559,12 +706,27 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.SPIDER_CARD.asItem())
                 .add(CardModItems.INVISIBLE_SPIDER_CARD.asItem())
 
+                .add(CardModItems.CREAKING_CARD.asItem())
+                .add(CardModItems.SLEEPING_CREAKING_CARD.asItem())
+
                 .add(CardModItems.CREEPER_CARD.asItem())
                 .add(CardModItems.CHARGED_CREEPER_CARD.asItem())
 
                 .add(CardModItems.ZOMBIE_CARD.asItem())
                 .add(CardModItems.HUSK_CARD.asItem())
                 .add(CardModItems.DROWNED_CARD.asItem())
+
+                .add(CardModItems.HALLOWEEN_ZOMBIE_CARD.asItem())
+                .add(CardModItems.CYBER_ZOMBIE_CARD.asItem())
+
+                .add(CardModItems.EVOKER_CARD.asItem())
+                .add(CardModItems.PILLAGER_CARD.asItem())
+                .add(CardModItems.RAVAGER_CARD.asItem())
+                .add(CardModItems.VEX_CARD.asItem())
+                .add(CardModItems.VINDICATOR_CARD.asItem())
+                .add(CardModItems.WITCH_CARD.asItem())
+                .add(CardModItems.ILLUSIONER_CARD.asItem())
+                .add(CardModItems.ICEOLOGER_CARD.asItem())
 
                 .add(CardModItems.SKELETON_CARD.asItem())
                 .add(CardModItems.BOGGED_CARD.asItem())
@@ -577,10 +739,13 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
                 .add(CardModItems.SKELETON_CARD.asItem())
                 .add(CardModItems.WITHER_SKELETON_CARD.asItem())
+                .add(CardModItems.WITHER_CARD.asItem())
+                .add(CardModItems.INVULNERABLE_WITHER_CARD.asItem())
 
                 .add(CardModItems.GHAST_CARD.asItem())
 
                 .add(CardModItems.BLAZE_CARD.asItem())
+                .add(CardModItems.WILDFIRE_CARD.asItem())
 
                 .add(CardModItems.MAGMA_CUBE_CARD.asItem())
 
@@ -596,12 +761,16 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(CardModTags.Items.END_MOB_CARDS)
                 .add(CardModItems.ENDER_DRAGON_CARD.asItem())
+                .add(CardModItems.GLITCHED_ENDER_DRAGON_CARD.asItem())
 
                 .add(CardModItems.ENDERMAN_CARD.asItem())
 
                 .add(CardModItems.ENDERMITE_CARD.asItem())
 
-                .add(CardModItems.SHULKER_CARD.asItem());
+                .add(CardModItems.SHULKER_CARD.asItem())
+
+                .add(CardModItems.INVALID_CARD.asItem())
+        ;
 
         getOrCreateTagBuilder(CardModTags.Items.SERIES_ONE_CARDS)
                 .add(CardModItems.ALLAY_CARD.asItem())
@@ -829,6 +998,51 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(CardModItems.LAPIS_PIG_CARD.asItem())
                 .add(CardModItems.QUARTZ_PIG_CARD.asItem())
                 ;
+        getOrCreateTagBuilder(CardModTags.Items.SERIES_ONE_EXPANSION_TWO_CARDS)
+                .add(CardModItems.ALLAY_CARD.asItem())
+                .add(CardModItems.BURNING_ALLAY_CARD.asItem())
+                .add(CardModItems.BLACK_AND_RED_AXOLOTL_CARD.asItem())
+
+                .add(CardModItems.WALDO_BEE_CARD.asItem())
+                .add(CardModItems.PIRATE_CAMEL_CARD.asItem())
+
+                .add(CardModItems.CLOWN_TEMPERATE_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_WARM_FROG_CARD.asItem())
+                .add(CardModItems.CLOWN_COLD_FROG_CARD.asItem())
+
+                .add(CardModItems.COWBOY_RED_PARROT_CARD.asItem())
+
+                .add(CardModItems.COPYWRITTEN_BLACK_RABBIT_CARD.asItem())
+
+                .add(CardModItems.SCREAM_PLAINS_UNEMPLOYED_VILLAGER_CARD.asItem())
+
+                .add(CardModItems.IRON_GOLEM_CARD.asItem())
+                .add(CardModItems.GOLDEN_GOLEM_CARD.asItem())
+
+                .add(CardModItems.CREAKING_CARD.asItem())
+                .add(CardModItems.SLEEPING_CREAKING_CARD.asItem())
+
+                .add(CardModItems.HALLOWEEN_ZOMBIE_CARD.asItem())
+                .add(CardModItems.CYBER_ZOMBIE_CARD.asItem())
+
+                .add(CardModItems.EVOKER_CARD.asItem())
+                .add(CardModItems.PILLAGER_CARD.asItem())
+                .add(CardModItems.RAVAGER_CARD.asItem())
+                .add(CardModItems.VEX_CARD.asItem())
+                .add(CardModItems.VINDICATOR_CARD.asItem())
+                .add(CardModItems.WITCH_CARD.asItem())
+                .add(CardModItems.ILLUSIONER_CARD.asItem())
+                .add(CardModItems.ICEOLOGER_CARD.asItem())
+
+                .add(CardModItems.WITHER_CARD.asItem())
+                .add(CardModItems.INVULNERABLE_WITHER_CARD.asItem())
+
+                .add(CardModItems.WILDFIRE_CARD.asItem())
+
+                .add(CardModItems.GLITCHED_ENDER_DRAGON_CARD.asItem())
+
+                .add(CardModItems.INVALID_CARD.asItem())
+                ;
 
         for (String color : sheep_colors) {
             String cardName = color.toLowerCase().replace(" ", "_") + "_sheep_card";
@@ -877,6 +1091,7 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
             }
 
         }
+
         for (String color : shulker_colors) {
             String cardName = color.toLowerCase().replace(" ", "_") + "_shulker_card";
             Item item = CardModItems.get(cardName); // Fetch the card item dynamically

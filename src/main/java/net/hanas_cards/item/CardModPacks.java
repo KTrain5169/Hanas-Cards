@@ -63,6 +63,12 @@ public class CardModPacks {
                     List.of(
                             TagKey.of(Registries.ITEM.getKey(), Identifier.of("hanas_cards", "series_one_expansion_one_cards"))
                     ))));
+    public static final Item SERIES_ONE_EXPANSION_TWO_CARD_PACK = registerItem("series_one_expansion_two_card_pack",
+            new CardPackItem(new CardPackSettings(3,
+                    Map.of(),
+                    List.of(
+                            TagKey.of(Registries.ITEM.getKey(), Identifier.of("hanas_cards", "series_one_expansion_two_cards"))
+                    ))));
 
 
     //public static Item get(String name) {

@@ -6,5 +6,6 @@ public class HanasCardsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
     }
 }

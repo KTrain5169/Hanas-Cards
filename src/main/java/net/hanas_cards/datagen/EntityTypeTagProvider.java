@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.hanas_cards.util.CardModTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.EntityTypeTags;
+
 import java.util.concurrent.CompletableFuture;
 
 public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvider {
